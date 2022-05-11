@@ -1,0 +1,19 @@
+.input {
+  font-family: "Inter";
+  width: 100%;
+  border: none;
+  font-style: normal;
+  font-weight: var(--fw-light);
+  font-size: 14px;
+  line-height: 17px;
+
+  ::placeholder {
+    color: #808080;
+    font-style: normal;
+    font-weight: var(--fw-light);
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  outline: none;
+}

@@ -1,0 +1,16 @@
+.container {
+  padding: 0 56px;
+}
+
+.loader__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
+@media screen and (max-width: 865px) {
+  .container {
+    padding: 0 20px;
+  }
+}

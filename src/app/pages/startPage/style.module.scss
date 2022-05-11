@@ -1,0 +1,18 @@
+.start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+
+  font-weight: var(--fw-light);
+  font-size: 22px;
+  line-height: 140%;
+  text-align: center;
+  color: #808080;
+
+  img {
+    width: 64px;
+    margin: 0 0 47px 0;
+  }
+}

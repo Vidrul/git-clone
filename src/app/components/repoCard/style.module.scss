@@ -1,0 +1,31 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 32px;
+  background-color: #fff;
+  border-radius: 6px;
+  min-height: 112px;
+  height: 100%;
+  gap: 16px;
+}
+
+.card__link {
+  font-weight: var(--fw-normal);
+  font-size: 24px;
+  line-height: 29px;
+  color: #0064eb;
+  text-decoration: none;
+}
+
+.card__description {
+  font-weight: var(--fw-light);
+  font-size: var(--font-sm);
+  line-height: 19px;
+  color: #000000;
+}
+
+@media screen and (max-width: 865px) {
+  .card__link {
+    font-size: var(--font-sm);
+  }
+}
