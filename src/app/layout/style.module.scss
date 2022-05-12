@@ -1,5 +1,7 @@
 .container {
-  padding: 0 56px;
+  max-width: 1366px;
+  padding: 0 20px;
+  margin: 0 auto;
 }
 
 .loader__wrapper {
@@ -9,8 +11,3 @@
   height: 85vh;
 }
 
-@media screen and (max-width: 865px) {
-  .container {
-    padding: 0 20px;
-  }
-}
