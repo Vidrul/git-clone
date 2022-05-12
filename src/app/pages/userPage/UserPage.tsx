@@ -40,15 +40,15 @@ const UserPage: FC = () => {
         </a>
         <div className={style.description__following}>
           <span className={style.followers}>
-            {user?.followers === 0 ? null : <img src={followers} alt="" />}
+            <img src={followers} alt="" />
             {user?.followers === 0
-              ? ""
+              ? ":("
               : `${numberFormatter(user?.followers || 0)} followers`}
           </span>
           <span className={style.following}>
-            {user?.following === 0 ? null : <img src={following} alt="" />}
+            <img src={following} alt="" />
             {user?.following === 0
-              ? ""
+              ? ":("
               : `${numberFormatter(user?.following || 0)} following`}
           </span>
         </div>
