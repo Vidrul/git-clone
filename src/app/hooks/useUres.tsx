@@ -5,23 +5,15 @@ import userRoposService from "../service/userRepos.service";
 
 interface IUserContext {
   user: IUser | null;
-  userRepos: IRepo[] | null;
-  error: unknown | null;
+  userRepos: IRepo[];
+  error: unknown;
   isLoading: boolean;
   isReposLoading: boolean;
   loadUserData: (userName: string) => void;
   loadRepos: (page: number) => void;
 }
 
-const UserContex = createContext<IUserContext>({
-  user: null,
-  userRepos: null,
-  isLoading: false,
-  isReposLoading: false,
-  error: null,
-  loadUserData: () => {},
-  loadRepos: () => {},
-});
+const UserContex = createContext<IUserContext>({} as IUserContext);
 export const useUser = () => useContext(UserContex);
 
 const UserProvider: FC<IUserProvider> = ({ children }) => {
