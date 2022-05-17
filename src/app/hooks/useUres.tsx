@@ -4,21 +4,29 @@ import userService from "../service/user.service";
 import userRoposService from "../service/userRepos.service";
 
 interface IUserContext {
-  user: IUser | undefined;
-  userRepos: IRepo[] | undefined;
-  error: unknown;
+  user: IUser | null;
+  userRepos: IRepo[] | null;
+  error: unknown | null;
   isLoading: boolean;
   isReposLoading: boolean;
   loadUserData: (userName: string) => void;
   loadRepos: (page: number) => void;
 }
 
-const UserContex = createContext({} as IUserContext);
+const UserContex = createContext<IUserContext>({
+  user: null,
+  userRepos: null,
+  isLoading: false,
+  isReposLoading: false,
+  error: null,
+  loadUserData: () => {},
+  loadRepos: () => {},
+});
 export const useUser = () => useContext(UserContex);
 
 const UserProvider: FC<IUserProvider> = ({ children }) => {
-  const [user, setUser] = useState<IUser>();
-  const [userRepos, setUserRepos] = useState<IRepo[]>();
+  const [user, setUser] = useState<IUser | null>(null);
+  const [userRepos, setUserRepos] = useState<IRepo[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isReposLoading, setIsReposLoading] = useState(false);
@@ -40,7 +48,7 @@ const UserProvider: FC<IUserProvider> = ({ children }) => {
     }, 1000);
   };
 
-  const loadRepos =  (page: number) => {
+  const loadRepos = (page: number) => {
     setIsReposLoading(true);
     setTimeout(async () => {
       try {

@@ -18,7 +18,7 @@ const Layout: FC = () => {
           </div>
         ) : error ? (
           <ErrorPage />
-        ) : user === undefined ? (
+        ) : user === null ? (
           <StartPage />
         ) : (
           <UserPage />
