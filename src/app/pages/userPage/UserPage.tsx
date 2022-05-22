@@ -35,7 +35,7 @@ const UserPage: FC = () => {
           alt=""
         />
         <span className={style.description__name}>{user?.name}</span>
-        <a href={user?.html_url} className={style.description__link}>
+        <a href={user?.html_url} className={style.description__link} target="_blank" rel="noreferrer">
           {user?.login}
         </a>
         <div className={style.description__following}>

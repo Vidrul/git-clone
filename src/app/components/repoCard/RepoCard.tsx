@@ -10,7 +10,7 @@ interface CardProps {
 const RepoCard: FC<CardProps> = ({ name, description, html_url }) => {
   return (
     <div className={style.card}>
-      <a className={style.card__link} href={html_url}>
+      <a className={style.card__link} href={html_url} target="_blank" rel="noreferrer">
         {name}
       </a>
       <span className={style.card__description}>{description}</span>
